@@ -29,6 +29,34 @@ In addition, [Laracasts](https://laracasts.com) contains thousands of video tuto
 
 You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
 
+## Endpoints & Features
+
+This project includes several custom controllers to demonstrate different Laravel features.
+
+### 1. Posts Service (`PostController`)
+Fetches and processes data from an external API (JSONPlaceholder).
+- **Endpoint:** `GET /posts`
+- **Description:** Returns the first 10 posts.
+- **Query Parameter:**
+  - `search`: (Optional) Filter posts by title (e.g., `/posts?search=sunt`).
+- **Response Format:** JSON list of objects containing `title` and `body`.
+
+### 2. Quotes Scraper (`QuoteController`)
+Demonstrates web scraping using cURL.
+- **Endpoint:** `GET /quotes`
+- **Description:** Scrapes real-time quotes and authors from `quotes.toscrape.com`.
+- **Response Format:** JSON list of objects with `quote` and `author`.
+
+### 3. Product Management API (`Api\ProductController`)
+A standard RESTful API for managing products.
+- **Base Path:** `/api/products`
+- **Endpoints:**
+  - `GET /api/products`: Returns a paginated list of products (10 per page).
+  - `POST /api/products`: Creates a new product.
+    - **Fields:** `name` (string), `price` (numeric), `description` (string, optional).
+  - `DELETE /api/products/{id}`: Deletes a product by ID.
+- **Notes:** Returns consistent JSON responses with `status` and `data` or `message`.
+
 ## Agentic Development
 
 Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
